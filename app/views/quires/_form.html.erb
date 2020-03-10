@@ -1,0 +1,22 @@
+<%= form_with(model: quire, url: manuscript_quires_path(@manuscript), local: true) do |form| %>
+  <% if quire.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(quire.errors.count, "error") %> prohibited this quire from being saved:</h2>
+
+      <ul>
+        <% quire.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :quire_number %>
+    <%= form.number_field :quire_number %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

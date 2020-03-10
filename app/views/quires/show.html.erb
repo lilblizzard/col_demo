@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Quire number:</strong>
+  <%= @quire.quire_number %>
+</p>
+
+<p>
+  <strong>Manuscript:</strong>
+  <%= @quire.manuscript_id %>
+</p>
+
+<div>
+  <%= link_to 'Add leaf', new_quire_leaf_path(@quire) %>
+</div>
+
+<%= link_to 'Edit', edit_quire_path(@quire) %> |
+<%= link_to 'Back', @manuscript %>

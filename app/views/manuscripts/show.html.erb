@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Shelfmark:</strong>
+  <%= @manuscript.shelfmark %>
+</p>
+
+<p>
+  <strong>Quires:</strong>
+  <%= link_to 'New Quire', new_manuscript_quire_path(@manuscript) %>
+</p>
+
+<table>
+  <thead>
+  <tr>
+    <th>Quire ID</th>
+    <th>Quire number</th>
+    <th>Manuscript</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @manuscript.quires.each do |quire| %>
+    <tr>
+      <td><%= quire.id %></td>
+      <td><%= quire.quire_number %></td>
+      <td><%= quire.manuscript_id %></td>
+      <td><%= link_to 'Show', [@manuscript, quire] %></td>
+      <td><%= link_to 'Edit', edit_quire_path(quire) %></td>
+      <td><%= link_to 'Destroy', quire, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Edit', edit_manuscript_path(@manuscript) %>
+<%= link_to 'Back', manuscripts_path %>

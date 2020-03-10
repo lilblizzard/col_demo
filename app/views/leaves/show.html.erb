@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Quire:</strong>
+  <%= @leaf.quire_id %>
+</p>
+
+<p>
+  <strong>Folio number:</strong>
+  <%= @leaf.folio_number %>
+</p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @leaf.position %>
+</p>
+
+<p>
+  <strong>Single:</strong>
+  <%= @leaf.single %>
+</p>
+
+<%= link_to 'Edit', edit_leaf_path(@leaf) %> |
+<%= link_to 'Back', leaves_path %>
